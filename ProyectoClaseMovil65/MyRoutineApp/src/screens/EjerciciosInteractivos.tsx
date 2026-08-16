@@ -4,9 +4,6 @@ import CustomInput from "../components/CustomInput";
 import CustomButton from "../components/CustomButton";
 
 export default function EjerciciosInteractivos() {
-  // ==========================================
-  // a) Nombre y Saludo Interactivo
-  // ==========================================
   const [nombre, setNombre] = useState("");
 
   const obtenerSaludo = (nombreIngresado: string): string => {
@@ -14,15 +11,9 @@ export default function EjerciciosInteractivos() {
     return `¡Hola, ${nombreIngresado}! Bienvenido a la aplicación.`;
   };
 
-  // ==========================================
-  // b) Edad y Condicional Interactivo
-  // ==========================================
   const [edadInput, setEdadInput] = useState("");
   const edad = parseInt(edadInput, 10);
 
-  // ==========================================
-  // c) Lista Dinámica de Productos Interactivo
-  // ==========================================
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState("");
   const [listaProductos, setListaProductos] = useState<
@@ -51,7 +42,6 @@ export default function EjerciciosInteractivos() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.headerTitle}>Ejercicios Interactivos</Text>
 
-      {/* a) Sección Nombre */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>a) Ingresar Nombre</Text>
         <CustomInput
@@ -66,7 +56,6 @@ export default function EjerciciosInteractivos() {
         </View>
       </View>
 
-      {/* b) Sección Edad */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>b) Verificar Edad</Text>
         <CustomInput
@@ -92,7 +81,6 @@ export default function EjerciciosInteractivos() {
         </View>
       </View>
 
-      {/* c) Sección Lista de Productos */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>c) Agregar Productos a la Lista</Text>
         <CustomInput

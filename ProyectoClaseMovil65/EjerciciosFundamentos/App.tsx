@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from "react-native";
 
 interface Producto {
@@ -8,34 +8,20 @@ interface Producto {
 }
 
 export default function App() {
-  // ==========================================
-  // a) Uso de funciones y variables
-  // ==========================================
-  // Variable de estado para el nombre ingresado por el usuario (sin valor predeterminado)
   const [nombreUsuario, setNombreUsuario] = useState<string>("");
 
-  // Función que recibe el nombre del usuario y retorna un saludo personalizado
   const obtenerSaludo = (nombre: string): string => {
     if (!nombre.trim()) return "Ingrese un nombre para saludarle";
     return `¡Hola, ${nombre}! Bienvenido a la aplicación.`;
   };
 
-  // ==========================================
-  // b) Estructuras condicionales
-  // ==========================================
-  // Variable de estado para la edad ingresada por el usuario (sin valor predeterminado)
   const [edadInput, setEdadInput] = useState<string>("");
   const edad = parseInt(edadInput, 10);
 
-  // ==========================================
-  // c) Uso de bucles (.map)
-  // ==========================================
-  // Variables de estado para ingresar productos a la lista (sin productos predeterminados)
   const [nombreProducto, setNombreProducto] = useState<string>("");
   const [precioProducto, setPrecioProducto] = useState<string>("");
   const [productos, setProductos] = useState<Producto[]>([]);
 
-  // Función para agregar un nuevo producto a la lista
   const handleAgregarProducto = () => {
     if (!nombreProducto.trim() || !precioProducto.trim()) return;
 
@@ -54,7 +40,6 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.headerTitle}>Ejercicios de Fundamentos</Text>
 
-      {/* a) Ejercicio: Funciones y Variables */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>a) Funciones y Variables</Text>
         <Text style={styles.label}>Ingrese el nombre del usuario:</Text>
@@ -72,7 +57,6 @@ export default function App() {
         <Text style={styles.resultValue}>{obtenerSaludo(nombreUsuario)}</Text>
       </View>
 
-      {/* b) Ejercicio: Estructuras Condicionales */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>b) Estructuras Condicionales</Text>
         <Text style={styles.label}>Ingrese la edad:</Text>
@@ -93,7 +77,6 @@ export default function App() {
         )}
       </View>
 
-      {/* c) Ejercicio: Uso de Bucles (.map) */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>c) Lista de Productos (.map)</Text>
         <Text style={styles.label}>Nombre del producto:</Text>
@@ -131,7 +114,6 @@ export default function App() {
   );
 }
 
-// Estilización con StyleSheet
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,

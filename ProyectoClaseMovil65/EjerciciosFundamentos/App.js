@@ -2,9 +2,7 @@ import { useState } from "react";
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, ScrollView } from "react-native";
 
 export default function App() {
-
   const [nombreUsuario, setNombreUsuario] = useState("");
-
 
   const obtenerSaludo = (nombre) => {
     if (!nombre.trim()) return "Ingrese un nombre para saludarle";
@@ -14,11 +12,9 @@ export default function App() {
   const [edadInput, setEdadInput] = useState("");
   const edad = parseInt(edadInput, 10);
 
-
   const [nombreProducto, setNombreProducto] = useState("");
   const [precioProducto, setPrecioProducto] = useState("");
   const [productos, setProductos] = useState([]);
-
 
   const handleAgregarProducto = () => {
     if (!nombreProducto.trim() || !precioProducto.trim()) return;
@@ -38,7 +34,6 @@ export default function App() {
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.headerTitle}>Ejercicios de Fundamentos</Text>
 
-      {/* a) Ejercicio: Funciones y Variables */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>a) Funciones y Variables</Text>
         <Text style={styles.label}>Ingrese el nombre del usuario:</Text>
@@ -56,7 +51,6 @@ export default function App() {
         <Text style={styles.resultValue}>{obtenerSaludo(nombreUsuario)}</Text>
       </View>
 
-      {/* b) Ejercicio: Estructuras Condicionales */}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>b) Estructuras Condicionales</Text>
         <Text style={styles.label}>Ingrese la edad:</Text>
@@ -77,7 +71,6 @@ export default function App() {
         )}
       </View>
 
-      {/*Uso de Bucles*/}
       <View style={styles.card}>
         <Text style={styles.sectionTitle}>c) Lista de Productos (.map)</Text>
         <Text style={styles.label}>Nombre del producto:</Text>
@@ -115,7 +108,6 @@ export default function App() {
   );
 }
 
-// Estilización con StyleSheet
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,

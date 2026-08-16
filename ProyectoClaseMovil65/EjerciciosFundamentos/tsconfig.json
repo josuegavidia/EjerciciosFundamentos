@@ -1,0 +1,6 @@
+{
+  "extends": "../MyRoutineApp/tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react-native"
+  }
+}
